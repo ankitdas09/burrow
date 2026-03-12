@@ -1,11 +1,11 @@
-# dt-tunnel
+# burrow
 
 Tunnel manager and client: expose a local port via a public HTTPS URL using a central server, Caddy, and SSH reverse forwarding.
 
 ## Layout
 
 ```
-dt-tunnel/
+burrow/
 ├── cmd/
 │   ├── client/          # CLI to create and maintain a tunnel
 │   └── server/          # Tunnel manager API + Caddy integration
@@ -23,8 +23,8 @@ dt-tunnel/
 ```bash
 make build
 # or
-go build -o bin/dt-tunnel-client ./cmd/client
-go build -o bin/dt-tunnel-server ./cmd/server
+go build -o bin/burrow-client ./cmd/client
+go build -o bin/burrow-server ./cmd/server
 ```
 
 ## Server (tunnel manager)
@@ -32,9 +32,9 @@ go build -o bin/dt-tunnel-server ./cmd/server
 Runs the HTTP API that allocates ports and registers routes with Caddy. Caddy must be running with the admin API enabled.
 
 ```bash
-./bin/dt-tunnel-server
+./bin/burrow-server
 # or with options:
-./bin/dt-tunnel-server -addr :8080 -caddy http://localhost:2019 -domain tunnel.example.com -port-min 10000 -port-max 20000
+./bin/burrow-server -addr :8080 -caddy http://localhost:2019 -domain tunnel.example.com -port-min 10000 -port-max 20000
 ```
 
 Flags:
@@ -49,9 +49,9 @@ Flags:
 Registers a tunnel with the server and opens an SSH reverse tunnel so traffic to the allocated port reaches your local service.
 
 ```bash
-./bin/dt-tunnel-client -port 3000 -key ./key.pem
+./bin/burrow-client -port 3000 -key ./key.pem
 # Named tunnel (stable subdomain):
-./bin/dt-tunnel-client -port 3000 -key ./key.pem -named user1
+./bin/burrow-client -port 3000 -key ./key.pem -named user1
 ```
 
 Flags:
