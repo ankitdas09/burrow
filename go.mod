@@ -1,3 +1,3 @@
-module dt-tunnel
+module burrow
 
 go 1.25.5
