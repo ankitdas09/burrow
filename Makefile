@@ -6,11 +6,11 @@ build: build-client build-server
 
 build-client:
 	@mkdir -p $(BINDIR)
-	go build -o $(BINDIR)/dt-tunnel-client ./cmd/client
+	go build -o $(BINDIR)/burrow-client ./cmd/client
 
 build-server:
 	@mkdir -p $(BINDIR)
-	go build -o $(BINDIR)/dt-tunnel-server ./cmd/server
+	go build -o $(BINDIR)/burrow-server ./cmd/server
 
 clean:
 	rm -rf $(BINDIR)

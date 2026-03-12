@@ -3,7 +3,7 @@ package client
 import (
 	"fmt"
 
-	"dt-tunnel/internal/models"
+	"burrow/internal/models"
 )
 
 func PrintBanner(session *models.Session, named string) {

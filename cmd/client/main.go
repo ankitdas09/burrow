@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"dt-tunnel/internal/client"
+	"burrow/internal/client"
 )
 
 func main() {
@@ -28,7 +28,7 @@ func main() {
 
 	if err := client.Run(cfg); err != nil {
 		fmt.Fprintln(os.Stderr, "Error:", err)
-		fmt.Fprintln(os.Stderr, "Usage: dt-tunnel-client --port 3000 --key ./key.pem [--named user1]")
+		fmt.Fprintln(os.Stderr, "Usage: burrow-client --port 3000 --key ./key.pem [--named user1]")
 		os.Exit(1)
 	}
 }

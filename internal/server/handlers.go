@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"dt-tunnel/internal/models"
+	"burrow/internal/models"
 )
 
 func (sm *SessionManager) CreateTunnel(w http.ResponseWriter, r *http.Request) {

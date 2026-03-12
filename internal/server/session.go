@@ -1,6 +1,6 @@
 package server
 
-import "dt-tunnel/internal/models"
+import "burrow/internal/models"
 
 type Session struct {
 	models.Session

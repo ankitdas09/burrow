@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"dt-tunnel/internal/server"
+	"burrow/internal/server"
 )
 
 func main() {

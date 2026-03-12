@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/http"
 
-	"dt-tunnel/internal/models"
+	"burrow/internal/models"
 )
 
 func CreateTunnel(apiURL string, port int, named string) (*models.Session, error) {
